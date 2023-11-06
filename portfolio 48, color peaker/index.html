@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Stargraph</title>
+</head>
+<body>
+    
+    <div class="color-switcher">
+        
+        <div class="switcher-btn">
+            <i class="fa-solid fa-gear"></i>
+        </div>
+
+        <h3>select color</h3>
+
+        <div class="theme-buttons-container">
+            <span class="theme-buttons" data-color="#00ff1e" style="background: green;"></span>
+            <span class="theme-buttons" data-color="#2b00ff" style="background: blue;"></span>
+            <span class="theme-buttons" data-color="#ff0077" style="background: magenta;"></span>
+            <span class="theme-buttons" data-color="#ff0000" style="background: red;"></span>
+            <span class="theme-buttons" data-color="#f2ff00" style="background: yellow;"></span>
+            <span class="theme-buttons" data-color="#ffa600" style="background: orange;"></span>
+            <span class="theme-buttons" data-color="#bf00ff" style="background: purple;"></span>
+            <span class="theme-buttons" data-color="#676767" style="background: gray;"></span>
+            <span class="theme-buttons" data-color="#ffffff" style="background: white;"></span>
+            <span class="theme-buttons" data-color="#000000" style="background: black;"></span>
+        </div>
+    </div>
+    <div class="container">
+        <h1>background picker</h1>
+    </div>
+    <script>
+        document.querySelector('.switcher-btn').onclick = () =>{
+            document.querySelector('.color-switcher').classList.toggle('active');
+        };
+        let themeButtons = document.querySelectorAll('.theme-buttons');
+        themeButtons.forEach(color =>{
+            color.addEventListener('click', () =>{
+                let backGround = color.getAttribute('data-color');
+                document.querySelector(':root').style.setProperty('--main-color', backGround);
+            });
+        });
+    </script>
+       
+</body>
+</html>
